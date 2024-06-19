@@ -10,9 +10,10 @@
     <pre></pre>
     <script>
       const twa = window.Telegram.WebApp
-      console.log({ data: twa.initData })
+      const { initData } = twa
+      console.log({ initData })
       document.querySelector('pre').innerText = JSON.stringify(
-        { data: twa.initData },
+        { initData },
         null,
         2
       )

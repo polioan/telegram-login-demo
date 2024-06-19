@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget</title>
+    <script src="https://telegram.org/js/telegram-widget.js?22"></script>
+  </head>
+  <body>
+    <input type="number" placeholder="bot id" />
+    <button>Auth</button>
+    <pre></pre>
+    <script>
+      document.querySelector('button').addEventListener('click', () => {
+        window.Telegram.Login.auth(
+          {
+            bot_id: document.querySelector('input').valueAsNumber,
+            request_access: true,
+          },
+          data => {
+            console.log({ data })
+            document.querySelector('pre').innerText = JSON.stringify(
+              { data },
+              null,
+              2
+            )
+          }
+        )
+      })
+    </script>
+  </body>
+</html>
