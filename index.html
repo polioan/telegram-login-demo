@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TWA</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+    <pre></pre>
+    <script>
+      const twa = window.Telegram.WebApp
+      console.log({ data: twa.initData })
+      document.querySelector('pre').innerText = JSON.stringify(
+        { data: twa.initData },
+        null,
+        2
+      )
+    </script>
+  </body>
+</html>
